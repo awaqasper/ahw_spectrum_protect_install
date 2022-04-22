@@ -4,7 +4,7 @@
   connection: local
   gather_facts:  false
   roles:
-    - roles: ansible-role-event-socks-tunnel
+  - role: ansible-role-event-socks-tunnel
 - name: Install/Upgrade IBM Spectrum Protect Client
   hosts: "{{affected_hosts}}"
   gather_facts: yes
