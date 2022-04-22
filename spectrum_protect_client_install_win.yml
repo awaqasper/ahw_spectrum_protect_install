@@ -6,7 +6,7 @@
   roles:
     - roles: ansible-role-event-socks-tunnel
 - name: Install/Upgrade IBM Spectrum Protect Client
-  hosts: all
+  hosts: "{{affected_hosts}}"
   gather_facts: yes
   vars:
     account_code: "{{ hostvars['localhost']{'account_code']}}"
