@@ -3,6 +3,6 @@
   src: git+https://github.kyndryl.net/Continuous-Engineering/ansible-role-event-socks-tunnel.git
   version: master
 - name: ansible-role-spectrum-protect-client-install
-  src: >-
+  src: >
     git+https://github.kyndryl.net/Continuous-Engineering/ansible-role-spectrum-protect-client-install.git
   version: development
