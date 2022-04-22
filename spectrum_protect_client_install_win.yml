@@ -1,0 +1,21 @@
+---
+- name: Role ensures that the socks tunnel is setup
+  hosts: localhost
+  connection: local
+  gather_facts:  false
+  roles:
+    - roles: ansible-role-event-socks-tunnel
+- name: Install/Upgrade IBM Spectrum Protect Client
+  hosts: all
+  gather_facts: yes
+  vars:
+    account_code: "{{ hostvars['localhost']{'account_code']}}"
+    trans_num: "{{ hostvars['localhost']{'trans_num']}}"
+    # win_use_runas: yes
+    # ansible_become_user: "{{ win_runas_user }}"
+    # ansible_become_password: "{{ win_runas_user_password }}"
+    # ansible_become_flags: "logon_type=batch logon_flags"
+  roles:
+    - ansible-role-spectrum-protect-client-install
+
+    © 2022 GitHub, Inc.
